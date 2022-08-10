@@ -1,0 +1,40 @@
+{
+    "name": "juneszh/alight-project",
+    "description": "A project template with Alight framework",
+    "type": "project",
+    "license": "MIT",
+    "keywords": [
+        "php",
+        "lightweight",
+        "framework",
+        "restful",
+        "fast-route",
+        "medoo",
+        "simplecache",
+        "psr-16",
+        "monolog",
+        "whoops",
+        "job scheduler"
+    ],
+    "authors": [
+        {
+            "name": "June So",
+            "email": "alight@juneszh.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "ctr\\": "app/Controllers",
+            "job\\": "app/Jobs",
+            "mod\\": "app/Models",
+            "svc\\": "app/Services"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "juneszh/alight": "*"
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}
