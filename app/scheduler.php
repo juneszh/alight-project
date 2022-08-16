@@ -8,4 +8,4 @@ $opts = getopt('r:j:');
 $execCode = $opts['r'] ?? null;
 $execJob = $opts['j'] ?? null;
 
-Alight\Job::scheduler('config/app.php', $execCode, $execJob);
+Alight\Job::start('config/app.php', $execCode, $execJob);

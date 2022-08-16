@@ -3,7 +3,9 @@ return [
     'app' => [
         'debug' => false,
     ],
-    'route' => 'config/route.php',
+    'route' => [
+        'config/routes/web.php'
+    ],
     'database' => [
         'type' => 'mysql',
         'host' => '127.0.0.1',

@@ -14,7 +14,7 @@
         "psr-16",
         "monolog",
         "whoops",
-        "job scheduler"
+        "job-scheduler"
     ],
     "authors": [
         {
@@ -30,9 +30,18 @@
             "svc\\": "app/Services"
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "require": {
-        "juneszh/alight": "*"
+        "juneszh/alight": "dev-main"
+    },
+    "prefer-stable": true,
+    "scripts": {
+        "admin": [
+            "@composer require juneszh/alight-admin",
+            ""
+        ],
+        "admin-build": "cd vendor/juneszh/alight-admin/npm && npm run build",
+        "admin-download": ""
     },
     "config": {
         "optimize-autoloader": true

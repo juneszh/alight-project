@@ -13,12 +13,12 @@ $ composer create-project juneszh/alight-project {YOUR_PROJECT}
     * `Models/` *Contains models of database (MVC pattern).*
     * `Services/` *Contains the business logics.*
     * `Views/` *Contains views with page templates (MVC pattern).*
-    * `bootstrap.php` *File for bootstraps the framework.*
-    * `scheduler.php` *File for the job scheduler run by CRON.*
+    * `bootstrap.php` *The web bootstraps.*
+    * `scheduler.php` *Job scheduler run by CRON.*
 * `config/` *Contains all of application's configuration files.*
+    * `routes/` *Contains the route's configuration.*
     * `app.php` *Application's configuration.*
     * `job.php` *Job scheduler's configuration.*
-    * `route.php` *Route's configuration.*
 * `public/` *Contains the index.php file and assets such as images, JavaScript, and CSS.*
     * `favicon.ico` *Icon for the web application.*
     * `index.php` *Entry point for all requests entering the web application.*
