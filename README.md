@@ -3,7 +3,7 @@ Alight Project is a project template with [Alight framework](https://github.com/
 
 ## Usage
 ```bash
-$ composer create-project juneszh/alight-project {YOUR_PROJECT}
+$ composer create-project juneszh/alight-project {PROJECT_DIRECTORY}
 ```
 
 ## Directory Structure
