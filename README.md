@@ -1,5 +1,5 @@
 # Alight Project
-A project template with [Alight framework](https://github.com/juneszh/alight).
+Alight Project is a project template with [Alight framework](https://github.com/juneszh/alight), which helps users to quickly build the directory structure of the project and create an admin panel by [Alight Admin](https://github.com/juneszh/alight-admin), it is very suitable for beginners.
 
 ## Usage
 ```bash
@@ -16,6 +16,7 @@ $ composer create-project juneszh/alight-project {YOUR_PROJECT}
     * `bootstrap.php` *The web bootstraps.*
     * `scheduler.php` *Job scheduler run by CRON.*
 * `config/` *Contains all of application's configuration files.*
+    * `admin/` *Contains the admin's menu and console configuration.*
     * `routes/` *Contains the route's configuration.*
     * `app.php` *Application's configuration.*
     * `job.php` *Job scheduler's configuration.*
@@ -39,6 +40,18 @@ For example:
 // The route handler points to function 'index' in app/Controllers/Pages.php
 Alight\Route::get('/', [\ctr\Pages::class, 'index']);
 ```
+
+## Composer scripts
+The admin panel is not built by default when creating project, you need to do it with composer scripts:
+```bash
+$ composer run-script admin-install
+```
+List of scripts:
+| Name | Directions |
+| -- | -- |
+| `admin-install` | Initialize the runtime environment required by the [Alight Admin](https://github.com/juneszh/alight-admin). |
+| `admin-build` | Rebuild the admin panel front-end resources by npm packages. ([Node.js](https://nodejs.org/en/download/) required) |
+| `admin-download` | Download the admin panel front-end resources from [Alight Admin releases](https://github.com/juneszh/alight-admin/releases) and override.|
 
 ## License
 * [MIT license](./LICENSE)

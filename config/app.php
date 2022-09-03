@@ -8,7 +8,7 @@ return [
     ],
     'database' => [
         'type' => 'mysql',
-        'host' => '127.0.0.1',
+        'host' => 'localhost',
         'database' => 'alight',
         'username' => 'root',
         'password' => '',

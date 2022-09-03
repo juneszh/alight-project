@@ -1,6 +1,6 @@
 {
     "name": "juneszh/alight-project",
-    "description": "A project template with Alight framework",
+    "description": "Alight Project is a project template with Alight framework.",
     "type": "project",
     "license": "MIT",
     "keywords": [
@@ -30,18 +30,19 @@
             "svc\\": "app/Services"
         }
     },
-    "minimum-stability": "dev",
     "require": {
-        "juneszh/alight": "dev-main"
+        "juneszh/alight": "*"
     },
-    "prefer-stable": true,
     "scripts": {
-        "admin": [
+        "post-update-cmd": "rm -rf storage/route/",
+        "admin-install": [
             "@composer require juneszh/alight-admin",
-            ""
+            "cp -rn vendor/juneszh/alight-admin/example/config/* ./config/",
+            "Alight\\Admin::install",
+            "@admin-download"
         ],
-        "admin-build": "cd vendor/juneszh/alight-admin/npm && npm run build",
-        "admin-download": ""
+        "admin-build": "cd vendor/juneszh/alight-admin/npm && npm install && npm run build",
+        "admin-download": "Alight\\Admin::download"
     },
     "config": {
         "optimize-autoloader": true
