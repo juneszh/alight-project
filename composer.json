@@ -36,13 +36,15 @@
     "scripts": {
         "post-update-cmd": "rm -rf storage/route/",
         "admin-install": [
-            "@composer require juneszh/alight-admin",
-            "cp -rn vendor/juneszh/alight-admin/example/config/* ./config/",
+            "cp -rn vendor/juneszh/alight-admin/example/config/* config/",
             "Alight\\Admin::install",
             "@admin-download"
         ],
         "admin-build": "cd vendor/juneszh/alight-admin/npm && npm install && npm run build",
-        "admin-download": "Alight\\Admin::download"
+        "admin-download": [
+            "Alight\\Admin::download",
+            "rm -rf public/alight-admin/ && mkdir public/alight-admin/ && cp -r storage/admin/build/* public/alight-admin/"
+        ]
     },
     "config": {
         "optimize-autoloader": true
