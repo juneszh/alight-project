@@ -8,9 +8,8 @@ if (PHP_SAPI !== 'cli') {
 
 require dirname(__FILE__, 2) . '/vendor/autoload.php';
 
-$opts = getopt('r:c:f:');
+$opts = getopt('r:f:');
 $execCode = ($opts['r'] ?? '') ?: null;
-$execHandler = ($opts['c'] ?? '') ?: null;
-$execFile = ($opts['f'] ?? '') ? getcwd() . '/' . $execFile : null;
+$execHandler = ($opts['f'] ?? '') ?: null;
 
-Alight\Job::start('config/app.php', $execCode, $execHandler, $execFile);
+Alight\Job::start('config/app.php', $execCode, $execHandler);
