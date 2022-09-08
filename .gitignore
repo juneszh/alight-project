@@ -4,4 +4,5 @@
 /.vscode
 .DS_Store
 /storage/*
+/config/app.php
 !.gitkeep

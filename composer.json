@@ -24,20 +24,20 @@
     ],
     "autoload": {
         "psr-4": {
-            "ctr\\": "app/Controllers",
-            "job\\": "app/Jobs",
-            "mod\\": "app/Models",
-            "svc\\": "app/Services"
+            "ctr\\": "app/controller",
+            "job\\": "app/job",
+            "mod\\": "app/model",
+            "svc\\": "app/service"
         }
     },
     "require": {
         "php": ">=7.4",
-        "juneszh/alight": "*"
+        "juneszh/alight": "^1.0"
     },
     "scripts": {
+        "post-create-project-cmd": "mv config/app.example.php config/app.php",
         "post-update-cmd": "rm -rf storage/route/",
         "admin-install": [
-            "@admin-download",
             "cp -rn vendor/juneszh/alight-admin/example/config/* config/",
             "Alight\\Admin::install"
         ],
@@ -49,5 +49,7 @@
     },
     "config": {
         "optimize-autoloader": true
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

@@ -1,5 +1,5 @@
 # Alight-Project
-Alight Project is a project template with [Alight framework](https://github.com/juneszh/alight), which helps users to quickly build the directory structure of the project and create an admin panel by [Alight-Admin](https://github.com/juneszh/alight-admin), it is very suitable for beginners.
+Alight-Project is a project template with [Alight framework](https://github.com/juneszh/alight), which helps users to quickly build the directory structure of the project and create an admin panel by [Alight-Admin](https://github.com/juneszh/alight-admin), it is very suitable for beginners.
 
 ## Alight Family
 
@@ -19,16 +19,16 @@ $ composer create-project juneszh/alight-project {PROJECT_DIRECTORY}
 
 ## Directory Structure
 * `app/` *Contains the core code of your application.*
-    * `Controllers/` *Contains controllers that handle requests (MVC pattern).*
-    * `Jobs/` *Contains jobs run by the time-based scheduler.*
-    * `Models/` *Contains models of database (MVC pattern).*
-    * `Services/` *Contains the business logics.*
-    * `Views/` *Contains views with page templates (MVC pattern).*
+    * `controller/` *Contains controllers that handle requests (MVC pattern).*
+    * `job/` *Contains jobs run by the time-based scheduler.*
+    * `model/` *Contains models of database (MVC pattern).*
+    * `service/` *Contains the business logics.*
+    * `view/` *Contains views with page templates (MVC pattern).*
     * `bootstrap.php` *The web bootstraps.*
     * `scheduler.php` *Job scheduler run by CRON.*
 * `config/` *Contains all of application's configuration files.*
     * `admin/` *Contains the admin's menu and console configuration.*
-    * `routes/` *Contains the route's configuration.*
+    * `route/` *Contains the route's configuration.*
     * `app.php` *Application's configuration.*
     * `job.php` *Job scheduler's configuration.*
 * `public/` *Contains the index.php file and assets such as images, JavaScript, and CSS.*
@@ -41,10 +41,10 @@ $ composer create-project juneszh/alight-project {PROJECT_DIRECTORY}
 The classes in the application are always called from the business code, so we define some shortcut namespaces to improve coding efficiency.
 | Namespace | Directory |
 | -- | -- |
-| `ctr` | `app/Controllers` |
-| `job` | `app/Jobs` |
-| `mod` | `app/Models` |
-| `svc` | `app/Services` |
+| `ctr` | `app/controller` |
+| `job` | `app/job` |
+| `mod` | `app/model` |
+| `svc` | `app/service` |
 
 For example:
 ```php
@@ -53,10 +53,11 @@ Alight\Route::get('/', [\ctr\Pages::class, 'index']);
 ```
 
 ## Composer Scripts
-The admin panel is not built by default when creating project, you need to do it with composer scripts:
+The admin panel is not built by default when creating project, you need to do it with follow scripts:
 ```bash
 $ composer require juneszh/alight-admin
 $ composer run-script admin-install
+$ composer run-script admin-download
 ```
 List of scripts:
 | Name | Description |

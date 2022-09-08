@@ -4,7 +4,7 @@ return [
         'debug' => false,
     ],
     'route' => [
-        'config/routes/web.php'
+        'config/route/web.php'
     ],
     'database' => [
         'type' => 'mysql',
