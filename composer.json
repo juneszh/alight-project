@@ -32,19 +32,13 @@
     },
     "require": {
         "php": ">=7.4",
-        "juneszh/alight": "^1.0"
+        "juneszh/alight": "^1.1"
     },
     "scripts": {
         "post-create-project-cmd": "mv config/app.example.php config/app.php",
-        "post-update-cmd": "rm -rf storage/route/",
-        "admin-install": [
-            "cp -rn vendor/juneszh/alight-admin/example/config/* config/",
-            "Alight\\Admin::install"
-        ],
-        "admin-download": [
-            "Alight\\Admin::download",
-            "rm -rf public/alight-admin/ && mkdir public/alight-admin/ && cp -r storage/admin/build/* public/alight-admin/"
-        ],
+        "post-update-cmd": "Alight\\Router::clearCache",
+        "admin-install": "Alight\\Admin::install",
+        "admin-download": "Alight\\Admin::download",
         "admin-build": "cd vendor/juneszh/alight-admin/npm && npm install && npm run build"
     },
     "config": {
