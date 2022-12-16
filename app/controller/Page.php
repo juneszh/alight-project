@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace ctr;
 
-class Pages
+class Page
 {
     public static function index()
     {
