@@ -39,7 +39,7 @@
         "post-update-cmd": "Alight\\Router::clearCache",
         "admin-install": "Alight\\Admin::install",
         "admin-download": "Alight\\Admin::download",
-        "admin-build": "cd vendor/juneszh/alight-admin/npm && npm install && npm run build"
+        "admin-build": "cd vendor/juneszh/alight-admin/resource && npm install && npm run build"
     },
     "config": {
         "optimize-autoloader": true
