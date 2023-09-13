@@ -19,7 +19,7 @@
     "authors": [
         {
             "name": "June So",
-            "email": "alight@juneszh.com"
+            "email": "june@alight.cc"
         }
     ],
     "autoload": {
@@ -32,14 +32,20 @@
     },
     "require": {
         "php": ">=7.4",
-        "juneszh/alight": "^1.1"
+        "juneszh/alight": "^2.0"
     },
     "scripts": {
         "post-root-package-install": "mv config/app.example.php config/app.php",
         "post-update-cmd": "Alight\\Router::clearCache",
-        "admin-install": "Alight\\Admin::install",
-        "admin-download": "Alight\\Admin::download",
-        "admin-build": "cd vendor/juneszh/alight-admin/resource && npm install && npm run build"
+        "admin-install": [
+            "composer require juneszh/alight-admin",
+            "Alight\\Admin::install"
+        ],
+        "admin-build": [
+            "cd vendor/juneszh/alight-admin/resource && npm install && npm run tinymce && npm run build",
+            "Alight\\Admin::publish"
+        ],
+        "admin-download": "Alight\\Admin::download"
     },
     "config": {
         "optimize-autoloader": true

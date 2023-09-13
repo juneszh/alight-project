@@ -3,6 +3,7 @@
 /.idea
 /.vscode
 .DS_Store
+!.gitkeep
+
 /storage/*
 /config/app.php
-!.gitkeep

@@ -2,6 +2,15 @@
 return [
     'app' => [
         'debug' => false,
+        'timezone' => null,
+        'storagePath' => 'storage',
+        'domainLevel' => 2,
+        'corsDomain' => null,
+        'corsHeaders' => null,
+        'corsMethods' => null,
+        'cacheAdapter' => null,
+        'errorHandler' => null,
+        'errorPageHandler' => null,
     ],
     'route' => [
         'config/route/web.php'

@@ -55,16 +55,15 @@ Alight\Route::get('/', [\ctr\Pages::class, 'index']);
 ## Composer Scripts
 The admin panel is not built by default when creating project, you need to do it with follow scripts:
 ```bash
-$ composer require juneszh/alight-admin
-$ composer run-script admin-install
-$ composer run-script admin-download
+$ composer run admin-install
+$ composer run admin-download
 ```
 List of scripts:
 | Name | Description |
 | -- | -- |
 | `admin-install` | Initialize the runtime environment required by the [Alight-Admin](https://github.com/juneszh/alight-admin). |
-| `admin-download` | Download the admin panel front-end resources from [Alight-Admin releases](https://github.com/juneszh/alight-admin/releases) and override.|
-| `admin-build` | Rebuild the admin panel front-end resources by npm packages. ([Node.js](https://nodejs.org/en/download/) required) |
+| `admin-build` | Build the admin panel front-end resources by npm packages. ([Node.js](https://nodejs.org/en/download/) required) |
+| `admin-download` | Download the admin panel front-end resources from [Alight-Admin releases](https://github.com/juneszh/alight-admin/releases).|
 
 ## License
 * [MIT license](./LICENSE)
