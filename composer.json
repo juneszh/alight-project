@@ -38,7 +38,7 @@
         "post-root-package-install": "mv config/app.example.php config/app.php",
         "post-update-cmd": "Alight\\Router::clearCache",
         "admin-install": [
-            "composer require juneszh/alight-admin",
+            "@composer require juneszh/alight-admin",
             "Alight\\Admin::install"
         ],
         "admin-build": [

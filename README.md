@@ -3,10 +3,10 @@ Alight-Project is a project template with [Alight framework](https://github.com/
 
 ## Alight Family
 
-| Project     | Description     |
-| --- | --- |
-| [Alight](https://github.com/juneszh/alight)  | Basic framework built-in routing, database, caching, etc. |
-| [Alight-Admin](https://github.com/juneszh/alight-admin)  | A full admin panel extension based on Alight. No front-end coding required.|
+| Project                                                     | Description                                                                       |
+| ----------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| [Alight](https://github.com/juneszh/alight)                 | Basic framework built-in routing, database, caching, etc.                         |
+| [Alight-Admin](https://github.com/juneszh/alight-admin)     | A full admin panel extension based on Alight. No front-end coding required.       |
 | [Alight-Project](https://github.com/juneszh/alight-project) | A template for beginner to easily create web applications by Alight/Alight-Admin. |
 
 ## Requirements
@@ -39,12 +39,12 @@ $ composer create-project juneszh/alight-project {PROJECT_DIRECTORY}
 
 ## Shortcut Namespaces
 The classes in the application are always called from the business code, so we define some shortcut namespaces to improve coding efficiency.
-| Namespace | Directory |
-| -- | -- |
-| `ctr` | `app/controller` |
-| `job` | `app/job` |
-| `mod` | `app/model` |
-| `svc` | `app/service` |
+| Namespace | Directory        |
+| --------- | ---------------- |
+| `ctr`     | `app/controller` |
+| `job`     | `app/job`        |
+| `mod`     | `app/model`      |
+| `svc`     | `app/service`    |
 
 For example:
 ```php
@@ -53,17 +53,19 @@ Alight\Route::get('/', [\ctr\Pages::class, 'index']);
 ```
 
 ## Composer Scripts
-The admin panel is not built by default when creating project, you need to do it with follow scripts:
+The admin panel is not built by default when creating project, you need to do it with follow scripts: (Please make sure the [database has been configured](https://github.com/juneszh/alight#database))
 ```bash
+$ cd {PROJECT_DIRECTORY}
+$ composer require juneszh/alight-admin
 $ composer run admin-install
 $ composer run admin-download
 ```
 List of scripts:
-| Name | Description |
-| -- | -- |
-| `admin-install` | Initialize the runtime environment required by the [Alight-Admin](https://github.com/juneszh/alight-admin). |
-| `admin-build` | Build the admin panel front-end resources by npm packages. ([Node.js](https://nodejs.org/en/download/) required) |
-| `admin-download` | Download the admin panel front-end resources from [Alight-Admin releases](https://github.com/juneszh/alight-admin/releases).|
+| Name             | Description                                                                                                                  |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `admin-install`  | Initialize the runtime environment required by the [Alight-Admin](https://github.com/juneszh/alight-admin).                  |
+| `admin-build`    | Build the admin panel front-end resources by npm packages. ([Node.js](https://nodejs.org/en/download/) required)             |
+| `admin-download` | Download the admin panel front-end resources from [Alight-Admin releases](https://github.com/juneszh/alight-admin/releases). |
 
 ## License
 * [MIT license](./LICENSE)
