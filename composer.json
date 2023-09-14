@@ -37,15 +37,12 @@
     "scripts": {
         "post-root-package-install": "mv config/app.example.php config/app.php",
         "post-update-cmd": "Alight\\Router::clearCache",
-        "admin-install": [
-            "@composer require juneszh/alight-admin",
-            "Alight\\Admin::install"
-        ],
+        "admin-install": "Alight\\Admin::install",
+        "admin-download": "Alight\\Admin::download",
         "admin-build": [
             "cd vendor/juneszh/alight-admin/resource && npm install && npm run tinymce && npm run build",
             "Alight\\Admin::publish"
-        ],
-        "admin-download": "Alight\\Admin::download"
+        ]
     },
     "config": {
         "optimize-autoloader": true
