@@ -31,12 +31,19 @@
         }
     },
     "require": {
-        "php": ">=7.4",
-        "juneszh/alight": "^2.0"
+        "php": ">=8.3",
+        "juneszh/alight": "dev-main"
     },
     "scripts": {
         "post-root-package-install": "mv config/app.example.php config/app.php",
-        "post-update-cmd": "Alight\\Router::clearCache",
+        "post-update-cmd": "@php tools/clear-route-cache.php",
+        "lint": "@php tools/lint.php",
+        "analyse": "phpstan analyse --no-progress --debug",
+        "check": [
+            "@composer validate --strict --no-check-publish --no-check-lock",
+            "@lint",
+            "@analyse"
+        ],
         "admin-install": "Alight\\Admin::install",
         "admin-download": "Alight\\Admin::download",
         "admin-build": [
@@ -48,5 +55,8 @@
         "optimize-autoloader": true
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "require-dev": {
+        "phpstan/phpstan": "^2.1"
+    }
 }

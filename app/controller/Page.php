@@ -6,7 +6,7 @@ namespace ctr;
 
 class Page
 {
-    public static function index()
+    public static function index(): void
     {
         echo 'Alight: Hello World!';
     }

@@ -1,5 +1,5 @@
 # Alight-Project
-Alight-Project is a project template with [Alight framework](https://github.com/juneszh/alight), which helps users to quickly build the directory structure of the project and create an admin panel by [Alight-Admin](https://github.com/juneszh/alight-admin), it is very suitable for beginners.
+Alight-Project is a project template for the [Alight framework](https://github.com/juneszh/alight). It provides a ready-to-use application structure and can be extended with an admin panel powered by [Alight-Admin](https://github.com/juneszh/alight-admin).
 
 ## Alight Family
 
@@ -10,7 +10,7 @@ Alight-Project is a project template with [Alight framework](https://github.com/
 | [Alight-Project](https://github.com/juneszh/alight-project) | A template for beginner to easily create web applications by Alight/Alight-Admin. |
 
 ## Requirements
-PHP 7.4+
+PHP 8.3+
 
 ## Usage
 ```bash
@@ -27,7 +27,7 @@ $ composer create-project juneszh/alight-project {PROJECT_DIRECTORY}
     * `bootstrap.php` *The web bootstraps.*
     * `scheduler.php` *Job scheduler run by CRON.*
 * `config/` *Contains all of application's configuration files.*
-    * `admin/` *Contains the admin's menu and console configuration.*
+    * `admin/` *Contains the admin's menu and console configuration after Alight-Admin is installed.*
     * `route/` *Contains the route's configuration.*
     * `app.php` *Application's configuration.*
     * `job.php` *Job scheduler's configuration.*
@@ -48,12 +48,12 @@ The classes in the application are always called from the business code, so we d
 
 For example:
 ```php
-// The route handler points to function 'index' in app/Controllers/Pages.php
-Alight\Route::get('/', [\ctr\Pages::class, 'index']);
+// The route handler points to method 'index' in app/controller/Page.php
+Alight\Route::get('/', [\ctr\Page::class, 'index']);
 ```
 
 ## Composer Scripts
-The admin panel is not built by default when creating project, you need to do it with follow scripts: (Please make sure the [database has been configured](https://github.com/juneszh/alight#database))
+The admin panel is not installed when a project is created. Configure the [database](https://github.com/juneszh/alight#database), then run:
 ```bash
 $ cd {PROJECT_DIRECTORY}
 $ composer require juneszh/alight-admin
@@ -66,6 +66,25 @@ List of scripts:
 | `admin-install`  | Initialize the runtime environment required by the [Alight-Admin](https://github.com/juneszh/alight-admin).                  |
 | `admin-build`    | Build the admin panel front-end resources by npm packages. ([Node.js](https://nodejs.org/en/download/) required)             |
 | `admin-download` | Download the admin panel front-end resources from [Alight-Admin releases](https://github.com/juneszh/alight-admin/releases). |
+
+## Development
+
+Validate Composer metadata, PHP syntax, and PHPStan before committing changes:
+
+```bash
+$ composer check
+```
+
+Run an individual check with `composer lint` or `composer analyse`.
+
+When developing against an unpublished sibling Alight checkout, run:
+
+```bash
+$ ALIGHT_SOURCE_DIR=../alight/src composer check
+```
+
+Repository architecture and AI coding-agent instructions are documented in
+[AGENTS.md](./AGENTS.md) and [docs/architecture.md](./docs/architecture.md).
 
 ## License
 * [MIT license](./LICENSE)

@@ -1,11 +1,13 @@
 <?php
+
+declare(strict_types=1);
+
 return [
     'app' => [
         'debug' => false,
         'timezone' => null,
         'storagePath' => 'storage',
         'domainLevel' => 2,
-        'corsDomain' => null,
         'corsHeaders' => null,
         'corsMethods' => null,
         'cacheAdapter' => null,
@@ -13,7 +15,7 @@ return [
         'errorPageHandler' => null,
     ],
     'route' => [
-        'config/route/web.php'
+        'config/route/web.php',
     ],
     'database' => [
         'type' => 'mysql',
@@ -23,7 +25,7 @@ return [
         'password' => '',
     ],
     'cache' => [
-        'type' => 'file'
+        'type' => 'file',
     ],
     'job' => 'config/job.php',
 ];

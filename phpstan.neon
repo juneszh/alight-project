@@ -1,0 +1,12 @@
+parameters:
+    level: 5
+    paths:
+        - app
+        - config
+        - public
+        - tools
+    bootstrapFiles:
+        - tools/phpstan-bootstrap.php
+    tmpDir: /tmp/alight-project-phpstan
+    parallel:
+        maximumNumberOfProcesses: 1
