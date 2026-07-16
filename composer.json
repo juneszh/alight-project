@@ -32,7 +32,7 @@
     },
     "require": {
         "php": ">=8.3",
-        "juneszh/alight": "dev-main"
+        "juneszh/alight": "^3.0"
     },
     "scripts": {
         "post-root-package-install": "mv config/app.example.php config/app.php",
